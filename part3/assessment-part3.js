@@ -13,6 +13,15 @@
 // return the result of your updateAnimal invocation
 
 // CODE HERE...
+function callBinding(magicAnimals, updateAnimal, id) {
+    var animal = '';
+    for (var i = 0; i < magicAnimals.length; i++) {
+        if(magicAnimals[i] === id) {
+            animal = magicAnimals[i];
+        }
+    }
+    return updateAnimal.call(animal, 'Trogdor');
+}
 
 
 
@@ -28,6 +37,15 @@
 // return the result of your updateAnimal invocation
 
 // CODE HERE...
+function applyBinding(magicAnimals, updateAnimal, id) {
+    var animal = '';
+    magicAnimals.forEach(function(x) {
+		if (x.id === id) {
+			animal = x;
+		}
+	});
+    return updateAnimal.apply(animal, ['being majestic', 'eating rainbows']);
+}
 
 
 
@@ -64,3 +82,4 @@ var foo;
 // and then resolve the array as you complete your promise.
 
 // CODE HERE...
+
